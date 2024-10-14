@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Formularz</h1>
+    <form id="myForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+            <label for="Nazwafirmy1">Nazwa firmy</label>
+            <input class="form-control" id="Nazwafirmy1" placeholder="Wprowadź nazwę firmy" required>
+        </div>
+        <div class="form-group">
+            <label for="NIP1">NIP</label>
+            <input class="form-control" id="NIP1" placeholder="Wprowadź NIP" required pattern="\d{10}" title="NIP musi składać się z 10 cyfr.">
+        </div>
+        <div class="form-group">
+            <label for="Miasto1">Miasto</label>
+            <input class="form-control" id="Miasto1" placeholder="Wprowadź miasto" required>
+        </div>
+        <div class="form-group">
+            <label for="Ulica1">Ulica</label>
+            <input class="form-control" id="Ulica1" placeholder="Wprowadź ulicę" required>
+        </div>
+        <div class="form-group">
+            <label for="NrDomu1">Numer Domu</label>
+            <input class="form-control" id="NrDomu1" placeholder="Wprowadź numer domu" required>
+        </div>
+        <div class="form-group">
+            <label for="Nrmieszkania1">Numer mieszkania</label>
+            <input class="form-control" id="Nrmieszkania1" placeholder="Wprowadź numer mieszkania" required>
+        </div>
+        <div class="form-group">
+            <label for="Kodpocztowy1">Kod pocztowy</label>
+            <input class="form-control" id="Kodpocztowy1" placeholder="Wprowadź kod pocztowy" required>
+        </div>
+        <div class="mb-3">
+            <label for="Uwagi" class="form-label">Uwagi</label>
+            <textarea class="form-control" id="Uwagi" rows="3" required></textarea>
+        </div>
+        <select class="form-select" id="Branza" aria-label="Default select example" required>
+            <option value="" disabled selected>Wybierz branżę</option>
+            <option value="1">Branża 1</option>
+            <option value="2">Branża 2</option>
+            <option value="3">Branża 3</option>
+        </select>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">Aktywny</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-secondary" onclick="fillFields()">Wypełnij pola</button>
+
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Zapobiega domyślnej akcji formularza
+
+            // Zbieranie danych z formularza
+            const formData = {
+                NazwaFirmy: document.getElementById('Nazwafirmy1').value,
+                NIP: document.getElementById('NIP1').value,
+                Miasto: document.getElementById('Miasto1').value,
+                Ulica: document.getElementById('Ulica1').value,
+                NrDomu: document.getElementById('NrDomu1').value,
+                NrMieszkania: document.getElementById('Nrmieszkania1').value,
+                KodPocztowy: document.getElementById('Kodpocztowy1').value,
+                Uwagi: document.getElementById('Uwagi').value,
+                Branza: document.getElementById('Branza').value,
+                Aktywny: document.getElementById('flexCheckDefault').checked
+            };
+
+            // Przykład użycia obiektu
+            console.log(formData);
+
+            // Możesz dodać dalszą logikę, jak zapis do bazy danych itp.
+        }
+        function fillFields() {
+            document.getElementById('Nazwafirmy1').value = 'Przykładowa Firma';
+            document.getElementById('NIP1').value = '1234567890';
+            document.getElementById('Miasto1').value = 'Warszawa';
+            document.getElementById('Ulica1').value = 'Przykładowa Ulica';
+            document.getElementById('NrDomu1').value = '1';
+            document.getElementById('Nrmieszkania1').value = '2';
+            document.getElementById('Kodpocztowy1').value = '00-000';
+            document.getElementById('Uwagi').value = 'Przykładowe uwagi';
+            document.getElementById('Branza').value = '1'; // Wybór branży
+            document.getElementById('flexCheckDefault').checked = true; // Ustawia checkbox na zaznaczony
+        }
+    </script>
+</body>
+</html>
