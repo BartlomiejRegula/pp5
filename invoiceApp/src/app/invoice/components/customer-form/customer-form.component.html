@@ -1,0 +1,47 @@
+    <form id="myForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+            <label for="Nazwafirmy1">Nazwa firmy</label>
+            <input class="form-control" id="Nazwafirmy1" placeholder="Wprowadź nazwę firmy" required>
+        </div>
+        <div class="form-group">
+            <label for="NIP1">NIP</label>
+            <input class="form-control" id="NIP1" placeholder="Wprowadź NIP" required pattern="\d{10}" title="NIP musi składać się z 10 cyfr.">
+        </div>
+        <div class="form-group">
+            <label for="Miasto1">Miasto</label>
+            <input class="form-control" id="Miasto1" placeholder="Wprowadź miasto" required>
+        </div>
+        <div class="form-group">
+            <label for="Ulica1">Ulica</label>
+            <input class="form-control" id="Ulica1" placeholder="Wprowadź ulicę" required>
+        </div>
+        <div class="form-group">
+            <label for="NrDomu1">Numer Domu</label>
+            <input class="form-control" id="NrDomu1" placeholder="Wprowadź numer domu" required>
+        </div>
+        <div class="form-group">
+            <label for="Nrmieszkania1">Numer mieszkania</label>
+            <input class="form-control" id="Nrmieszkania1" placeholder="Wprowadź numer mieszkania" required>
+        </div>
+        <div class="form-group">
+            <label for="Kodpocztowy1">Kod pocztowy</label>
+            <input class="form-control" id="Kodpocztowy1" placeholder="Wprowadź kod pocztowy" required>
+        </div>
+        <div class="mb-3">
+            <label for="Uwagi" class="form-label">Uwagi</label>
+            <textarea class="form-control" id="Uwagi" rows="3" required></textarea>
+        </div>
+        <select class="form-select" id="Branza" aria-label="Default select example" required>
+            <option value="" disabled selected>Wybierz branżę</option>
+            <option value="1">Branża 1</option>
+            <option value="2">Branża 2</option>
+            <option value="3">Branża 3</option>
+        </select>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">Aktywny</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-secondary" onclick="fillFields()">Wypełnij pola</button>
+
+    </form>
