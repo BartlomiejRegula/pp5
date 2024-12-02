@@ -1,7 +1,7 @@
-    <form id="myForm" onsubmit="handleSubmit(event)">
+    <form (ngSubmit)="saveData()">
         <div class="form-group">
             <label for="Nazwafirmy1">Nazwa firmy</label>
-            <input class="form-control" id="Nazwafirmy1" placeholder="Wprowadź nazwę firmy" required>
+            <input class="form-control" id="Nazwafirmy1" name="name" [(ngModel)]="customer.name" placeholder="Wprowadź nazwę firmy" required>
         </div>
         <div class="form-group">
             <label for="NIP1">NIP</label>
